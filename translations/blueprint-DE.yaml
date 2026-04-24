@@ -1,0 +1,223 @@
+blueprint:
+  name: Velux SML Steuerungsskript
+  domain: script
+  input:
+    switch_1:
+      name: Schalter 1
+      description: Die erste Schalter-Entität des Sonoff CH4 Pro, der mit diesem Rollladen verbunden ist.
+      selector:
+        entity:
+          domain: switch
+    switch_2:
+      name: Schalter 2
+      description: Die zweite Schalter-Entität des Sonoff CH4 Pro, der mit diesem Rollladen verbunden ist.
+      selector:
+        entity:
+          domain: switch
+    position:
+      name: Position
+      description: Die erstellte input_number-Entität, die verwendet wird, um die Position dieses Rollladens zu verfolgen.
+      selector:
+        entity:
+          domain: input_number
+    reverse_direction:
+      name: Richtung umkehren
+      description: (Optional) Aktivieren Sie dies, wenn das Einschalten beider Schalter den Rollladen schließt und das Ausschalten beider Schalter ihn öffnet. Dies sollte nur ein Problem sein, wenn die Kabel des Velux SML Rollladens in der falschen Reihenfolge an den Sonoff CH4 Pro angeschlossen wurden.
+      default: false
+      selector:
+        boolean: {}
+
+variables:
+  switch_1: !input switch_1
+  switch_2: !input switch_2
+  position: !input position
+  reverse_direction: !input reverse_direction
+
+fields:
+  action:
+    name: Action
+    description: Action to perform
+    required: true
+    selector:
+      select:
+        multiple: false
+        options:
+          - Open
+          - Close
+          - Stop
+          - Position
+  requested_position:
+    name: Requested Position
+    description: Target position (only used when Action is equal to Position)
+    required: false
+    selector:
+      number:
+        min: 0
+        max: 100
+        step: 1
+
+sequence:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ action == 'Open' }}"
+        sequence:
+          - action: >-
+              {% if reverse_direction %} switch.turn_off {% else %} switch.turn_on {% endif %}
+            target:
+              entity_id:
+                - !input switch_1
+                - !input switch_2
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 1
+              milliseconds: 0
+          - repeat:
+              while:
+                - condition: numeric_state
+                  entity_id: !input position
+                  below: 100
+                - condition: template
+                  value_template: |-
+                    {% set state1 = states(switch_1) %}
+                    {% set state2 = states(switch_2) %}
+                    {% if state1 == 'on' and state2 == 'off' %}
+                      false
+                    {% elif state1 == 'off' and state2 == 'on' %}
+                      false
+                    {% else %}
+                      true
+                    {% endif %}
+              sequence:
+                - action: >-
+                    {% if reverse_direction %} input_number.decrement {% else %} input_number.increment {% endif %}
+                  target:
+                    entity_id: !input position
+                - delay:
+                    hours: 0
+                    minutes: 0
+                    seconds: 0
+                    milliseconds: 320
+      - conditions:
+          - condition: template
+            value_template: "{{ action == 'Close' }}"
+        sequence:
+          - action: >-
+              {% if reverse_direction %} switch.turn_on {% else %} switch.turn_off {% endif %}
+            target:
+              entity_id:
+                - !input switch_1
+                - !input switch_2
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 1
+              milliseconds: 0
+          - repeat:
+              while:
+                - condition: numeric_state
+                  entity_id: !input position
+                  above: 0
+                - condition: template
+                  value_template: |-
+                    {% set state1 = states(switch_1) %}
+                    {% set state2 = states(switch_2) %}
+                    {% if state1 == 'on' and state2 == 'off' %}
+                      false
+                    {% elif state1 == 'off' and state2 == 'on' %}
+                      false
+                    {% else %}
+                      true
+                    {% endif %}
+              sequence:
+                - action: >-
+                    {% if reverse_direction %} input_number.increment {% else %} input_number.decrement {% endif %}
+                  target:
+                    entity_id: !input position
+                - delay:
+                    hours: 0
+                    minutes: 0
+                    seconds: 0
+                    milliseconds: 320
+      - conditions:
+          - condition: template
+            value_template: "{{ action == 'Stop' }}"
+        sequence:
+          - action: switch.toggle
+            target:
+              entity_id: !input switch_2
+      - conditions:
+          - condition: template
+            value_template: "{{ action == 'Position' }}"
+        sequence:
+          - if:
+              - condition: template
+                value_template: >-
+                  {{
+                  states(position)|int()
+                  < requested_position }}
+            then:
+              - action: >-
+                  {% if reverse_direction %} switch.turn_off {% else %} switch.turn_on {% endif %}
+                target:
+                  entity_id:
+                    - !input switch_1
+                    - !input switch_2
+              - delay:
+                  hours: 0
+                  minutes: 0
+                  seconds: 1
+                  milliseconds: 0
+              - repeat:
+                  while:
+                    - condition: template
+                      value_template: >-
+                        {{
+                        states(position)|int()
+                        != requested_position }}
+                  sequence:
+                    - action: >-
+                        {% if reverse_direction %} input_number.decrement {% else %} input_number.increment {% endif %}
+                      target:
+                        entity_id: !input position
+                    - delay:
+                        hours: 0
+                        minutes: 0
+                        seconds: 0
+                        milliseconds: 320
+              - action: switch.toggle
+                target:
+                  entity_id: !input switch_2
+            else:
+              - action: >-
+                  {% if reverse_direction %} switch.turn_on {% else %} switch.turn_off {% endif %}
+                target:
+                  entity_id:
+                    - !input switch_1
+                    - !input switch_2
+              - delay:
+                  hours: 0
+                  minutes: 0
+                  seconds: 1
+                  milliseconds: 0
+              - repeat:
+                  while:
+                    - condition: template
+                      value_template: >-
+                        {{
+                        states(position)|int()
+                        != requested_position }}
+                  sequence:
+                    - action: >-
+                        {% if reverse_direction %} input_number.increment {% else %} input_number.decrement {% endif %}
+                      target:
+                        entity_id: !input position
+                    - delay:
+                        hours: 0
+                        minutes: 0
+                        seconds: 0
+                        milliseconds: 320
+              - action: switch.toggle
+                target:
+                  entity_id: !input switch_2
