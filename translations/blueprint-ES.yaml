@@ -109,7 +109,7 @@ sequence:
                     hours: 0
                     minutes: 0
                     seconds: 0
-                    milliseconds: "{{ (time_to_open_close | int * 10 | round(0, 'ceil') }}"
+                    milliseconds: "{{ (time_to_open_close | float * 10 | round(0, 'ceil') }}"
       - conditions:
           - condition: template
             value_template: "{{ action == 'Close' }}"
@@ -150,7 +150,7 @@ sequence:
                     hours: 0
                     minutes: 0
                     seconds: 0
-                    milliseconds: "{{ (time_to_open_close | int * 10 | round(0, 'ceil') }}"
+                    milliseconds: "{{ (time_to_open_close | float * 10 | round(0, 'ceil') }}"
       - conditions:
           - condition: template
             value_template: "{{ action == 'Stop' }}"
@@ -196,7 +196,7 @@ sequence:
                         hours: 0
                         minutes: 0
                         seconds: 0
-                        milliseconds: "{{ (time_to_open_close | int * 10 | round(0, 'ceil') }}"
+                        milliseconds: "{{ (time_to_open_close | float * 10 | round(0, 'ceil') }}"
               - action: switch.toggle
                 target:
                   entity_id: !input switch_2
@@ -228,7 +228,7 @@ sequence:
                         hours: 0
                         minutes: 0
                         seconds: 0
-                        milliseconds: "{{ (time_to_open_close | int * 10 | round(0, 'ceil') }}"
+                        milliseconds: "{{ (time_to_open_close | float * 10 | round(0, 'ceil') }}"
               - action: switch.toggle
                 target:
                   entity_id: !input switch_2
