@@ -104,8 +104,7 @@ sequence:
                       true
                     {% endif %}
               sequence:
-                - action: >-
-                    {% if reverse_direction %} input_number.decrement {% else %} input_number.increment {% endif %}
+                - action: input_number.increment
                   target:
                     entity_id: !input position
                 - delay:
@@ -145,8 +144,7 @@ sequence:
                       true
                     {% endif %}
               sequence:
-                - action: >-
-                    {% if reverse_direction %} input_number.increment {% else %} input_number.decrement {% endif %}
+                - action: input_number.decrement
                   target:
                     entity_id: !input position
                 - delay:
@@ -191,8 +189,7 @@ sequence:
                         states(position)|int()
                         != requested_position }}
                   sequence:
-                    - action: >-
-                        {% if reverse_direction %} input_number.decrement {% else %} input_number.increment {% endif %}
+                    - action: input_number.increment
                       target:
                         entity_id: !input position
                     - delay:
@@ -223,8 +220,7 @@ sequence:
                         states(position)|int()
                         != requested_position }}
                   sequence:
-                    - action: >-
-                        {% if reverse_direction %} input_number.increment {% else %} input_number.decrement {% endif %}
+                    - action: input_number.decrement
                       target:
                         entity_id: !input position
                     - delay:
