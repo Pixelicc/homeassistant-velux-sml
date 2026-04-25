@@ -16,13 +16,23 @@ blueprint:
           domain: switch
     position:
       name: Posición
-      description: El input_number creado que se usa para rastrear la posición de esta persiana.
+      description: La entidad input_number creada utilizada para rastrear la posición de esta persiana.
       selector:
         entity:
           domain: input_number
+    time_to_open_close:
+      name: Tiempo para abrir o cerrar completamente
+      description: El tiempo en segundos que tarda en abrirse o cerrarse completamente la persiana.
+      default: 32
+      selector:
+        number:
+          min: 1
+          max: 60
+          step: 1
+          unit_of_measurement: seconds
     reverse_direction:
-      name: Dirección Inversa
-      description: (Opcional) Active esto si al encender ambos interruptores se cierra esta persiana y al apagarlos se abre. Esto solo debería ser un problema si los cables de la persiana Velux SML se conectaron en el orden incorrecto al Sonoff CH4 Pro.
+      name: Invertir dirección
+      description: (Opcional) Habilite esto si encender ambos interruptores cierra esta persiana y apagarlos la abre. Esto solo debería ser un problema si los cables de la persiana Velux SML se conectaron en el orden incorrecto al Sonoff CH4 Pro.
       default: false
       selector:
         boolean: {}
@@ -31,6 +41,7 @@ variables:
   switch_1: !input switch_1
   switch_2: !input switch_2
   position: !input position
+  time_to_open_close: !input time_to_open_close
   reverse_direction: !input reverse_direction
 
 fields:
@@ -98,7 +109,7 @@ sequence:
                     hours: 0
                     minutes: 0
                     seconds: 0
-                    milliseconds: 320
+                    milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
       - conditions:
           - condition: template
             value_template: "{{ action == 'Close' }}"
@@ -139,7 +150,7 @@ sequence:
                     hours: 0
                     minutes: 0
                     seconds: 0
-                    milliseconds: 320
+                    milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
       - conditions:
           - condition: template
             value_template: "{{ action == 'Stop' }}"
@@ -185,7 +196,7 @@ sequence:
                         hours: 0
                         minutes: 0
                         seconds: 0
-                        milliseconds: 320
+                        milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
               - action: switch.toggle
                 target:
                   entity_id: !input switch_2
@@ -217,7 +228,7 @@ sequence:
                         hours: 0
                         minutes: 0
                         seconds: 0
-                        milliseconds: 320
+                        milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
               - action: switch.toggle
                 target:
                   entity_id: !input switch_2

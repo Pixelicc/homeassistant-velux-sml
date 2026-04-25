@@ -20,6 +20,16 @@ blueprint:
       selector:
         entity:
           domain: input_number
+    time_to_open_close:
+      name: Time to fully open or close
+      description: The time in seconds it takes to fully open or close the shutter.
+      default: 32
+      selector:
+        number:
+          min: 1
+          max: 60
+          step: 1
+          unit_of_measurement: seconds
     reverse_direction:
       name: Reverse Direction
       description: (Optional) Enable this if both switches being on closes this shutter and both switches being off opens it. This should only be a problem if the wires of the Velux SML Shutter/Cover were connected in the wrong order to the Sonoff CH4 Pro.
@@ -31,6 +41,7 @@ variables:
   switch_1: !input switch_1
   switch_2: !input switch_2
   position: !input position
+  time_to_open_close: !input time_to_open_close
   reverse_direction: !input reverse_direction
 
 fields:
@@ -98,7 +109,7 @@ sequence:
                     hours: 0
                     minutes: 0
                     seconds: 0
-                    milliseconds: 320
+                    milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
       - conditions:
           - condition: template
             value_template: "{{ action == 'Close' }}"
@@ -139,7 +150,7 @@ sequence:
                     hours: 0
                     minutes: 0
                     seconds: 0
-                    milliseconds: 320
+                    milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
       - conditions:
           - condition: template
             value_template: "{{ action == 'Stop' }}"
@@ -185,7 +196,7 @@ sequence:
                         hours: 0
                         minutes: 0
                         seconds: 0
-                        milliseconds: 320
+                        milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
               - action: switch.toggle
                 target:
                   entity_id: !input switch_2
@@ -217,7 +228,7 @@ sequence:
                         hours: 0
                         minutes: 0
                         seconds: 0
-                        milliseconds: 320
+                        milliseconds: "{{ (time_to_open_close | float / 100) | round(0, 'ceil') }}"
               - action: switch.toggle
                 target:
                   entity_id: !input switch_2
