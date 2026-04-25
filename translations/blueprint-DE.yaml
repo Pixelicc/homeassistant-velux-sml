@@ -67,6 +67,9 @@ fields:
         max: 100
         step: 1
 
+mode: parallel
+max: 10
+
 sequence:
   - choose:
       - conditions:
