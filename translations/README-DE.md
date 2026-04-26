@@ -1,5 +1,7 @@
 # Velux SML Rollläden/Markisen Integrationsanleitung
 
+🌍 Aktuell angezeigt: **Deutsch** ∙ [English](../README.md) ∙ [Español](README-ES.md) ∙ [Français](README-FR.md)
+
 > [!WARNING]
 > Diese Integration erfordert die manuelle Verkabelung der Velux SML Rollläden und eines 24V-Netzteils. Eine unsachgemäße Verkabelung kann zu Geräteschäden, Sachschäden oder Personenschäden führen. Ich übernehme keine Verantwortung für Schäden oder Verletzungen, die durch das Befolgen dieser Anleitung entstehen. Die Durchführung erfolgt auf eigene Gefahr.
 

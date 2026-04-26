@@ -1,5 +1,7 @@
 # Velux SML Shutters/Covers Integration Guide
 
+🌍 Currently viewing **English** ∙ [Deutsch](translations/README-DE.md) ∙ [Español](translations/README-ES.md) ∙ [Français](translations/README-FR.md)
+
 > [!WARNING]
 > This integration requires manual wiring of the Velux SML covers and a 24V power supply. Incorrect wiring could result in equipment damage, property damage, or personal injury. I do not take any responsibility for any damage or injury caused by following this guide. Proceed at your own risk.
 

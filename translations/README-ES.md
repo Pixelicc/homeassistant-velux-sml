@@ -1,5 +1,7 @@
 # Guía de Integración de Persianas/Cubiertas Velux SML
 
+🌍 Viendo actualmente: **Español** ∙ [English](../README.md) ∙ [Deutsch](README-DE.md) ∙ [Français](README-FR.md)
+
 > [!WARNING]
 > Esta integración requiere el cableado manual de las persianas Velux SML y una fuente de alimentación de 24V. Un cableado incorrecto podría resultar en daños al equipo, daños a la propiedad o lesiones personales. No asumo ninguna responsabilidad por cualquier daño o lesión causada al seguir esta guía. Proceda bajo su propio riesgo.
 

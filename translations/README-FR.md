@@ -1,5 +1,7 @@
 # Guide d'Intégration des Volets/Stores Velux SML
 
+🌍 Actuellement affiché : **Français** ∙ [English](../README.md) ∙ [Deutsch](README-DE.md) ∙ [Español](README-ES.md)
+
 > [!WARNING]
 > Cette intégration nécessite le câblage manuel des volets Velux SML et d'une alimentation 24V. Un câblage incorrect pourrait entraîner des dommages matériels ou des blessures. Je n'assume aucune responsabilité pour tout dommage ou blessure causé en suivant ce guide. Procédez à vos propres risques.
 
