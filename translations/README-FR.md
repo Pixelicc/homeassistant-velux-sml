@@ -48,9 +48,37 @@
    </br>
    _Si les fils sont connectés à l'envers, inversez `open` et `closed` dans le modèle d'état ci-dessous. Ne le faites que si vous avez également basculé l'option `reverse` dans le blueprint._
    <img width="552" height="534" alt="Template-Cover-Helper-Screenshot-1" src="https://github.com/user-attachments/assets/802b872c-56f1-409d-8bd4-656d6f10c2b1" />
+
+   ```jinja2
+   {% set switch1 = states('switch.SONOFF_SWITCH_ENTITY_1') %}
+   {% set switch2 = states('switch.SONOFF_SWITCH_ENTITY_2') %}
+   {% if switch1 == 'on' and switch2 == 'on' %}
+      open
+   {% else %}
+      closed
+   {% endif %}
+   ```
+
    <img width="552" height="434" alt="Template-Cover-Helper-Screenshot-2" src="https://github.com/user-attachments/assets/38540422-3ff3-46ba-b3ad-c3f3a990622a" />
    <img width="552" height="434" alt="Template-Cover-Helper-Screenshot-3" src="https://github.com/user-attachments/assets/5e62899a-25cf-49f0-af2e-daad0ec3ff33" />
    <img width="552" height="445" alt="Template-Cover-Helper-Screenshot-4" src="https://github.com/user-attachments/assets/39189d5e-0381-43b7-8f0e-d7a54c0ded39" />
    <img width="552" height="168" alt="Template-Cover-Helper-Screenshot-5" src="https://github.com/user-attachments/assets/00fcdbd7-c418-4f2c-9e63-1a45fb0bfcc0" />
+
+   ```jinja2
+   {{ states('input_number.YOUR_INPUT_NUMBER_HELPER') }}
+   ```
+
    <img width="552" height="264" alt="Template-Cover-Helper-Screenshot-6" src="https://github.com/user-attachments/assets/005f1dc9-8c7e-45e7-bd6e-d7fbc597f1e7" />
+
+   ```yaml
+   action: script.velux_sml_control_script
+   data:
+     action: Position
+     requested_position: "{{ position }}"
+   ```
+
    <img width="552" height="497" alt="Template-Cover-Helper-Screenshot-7" src="https://github.com/user-attachments/assets/e8d9c518-f9b6-4b27-9754-c951505afca6" />
+
+   ```jinja2
+   {{ has_value('switch.SONOFF_SWITCH_ENTITY_1') and has_value('switch.SONOFF_SWITCH_ENTITY_2') }}
+   ```
