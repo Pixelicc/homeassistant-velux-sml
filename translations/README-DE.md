@@ -24,9 +24,7 @@
    - Schließen Sie die Relais gemäß dem untenstehenden Schaltplan an.
    - Der Sonoff 4CH Pro und die Rollläden werden beide über das 24V-Netzteil mit Strom versorgt. Das 24V-Netzteil muss in 2-3 Kabel aufgeteilt werden, um sowohl den Sonoff über einen Hohlstecker als auch die Rollläden direkt mit Strom zu versorgen.
 
-   ```
-   [Wiring Diagram Placeholder]
-   ```
+   <img width="306" height="286" alt="image" src="https://github.com/user-attachments/assets/45f6cba8-faf6-445d-9808-4aa0122c0be7" />
 
 ## Sonoff 4CH Pro Erste Einrichtung
 

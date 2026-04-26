@@ -24,9 +24,7 @@
    - Connectez les relais selon le schéma de câblage ci-dessous.
    - Le Sonoff 4CH Pro et les volets reçoivent tous deux du 24V de l'alimentation. L'alimentation 24V doit être divisée en 2-3 fils pour alimenter à la fois le Sonoff via un connecteur cylindrique et les volets directement.
 
-   ```
-   [Wiring Diagram Placeholder]
-   ```
+   <img width="306" height="286" alt="image" src="https://github.com/user-attachments/assets/45f6cba8-faf6-445d-9808-4aa0122c0be7" />
 
 ## Configuration Initiale du Sonoff 4CH Pro
 

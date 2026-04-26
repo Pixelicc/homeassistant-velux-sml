@@ -24,9 +24,7 @@
    - Conecte los relés según el diagrama de cableado a continuación.
    - El Sonoff 4CH Pro y las persianas reciben 24V de la fuente de alimentación. La fuente de alimentación de 24V debe dividirse en 2-3 cables para alimentar tanto el Sonoff a través de un conector de barril como las persianas directamente.
 
-   ```
-   [Wiring Diagram Placeholder]
-   ```
+   <img width="306" height="286" alt="image" src="https://github.com/user-attachments/assets/45f6cba8-faf6-445d-9808-4aa0122c0be7" />
 
 ## Configuración Inicial del Sonoff 4CH Pro
 
