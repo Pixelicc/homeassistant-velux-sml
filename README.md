@@ -24,8 +24,7 @@
    - Connect the relays according to the wiring diagram below.
    - The Sonoff 4CH Pro and the covers both receive 24V from the power supply. The 24V Power Supply needs to be split into 2-3 wires to power both the Sonoff via a Barrel Jack and the Covers directly.
 
-   <img width="612" height="574" alt="image" src="https://github.com/user-attachments/assets/45f6cba8-faf6-445d-9808-4aa0122c0be7" />
-
+   <img width="306" height="286" alt="image" src="https://github.com/user-attachments/assets/45f6cba8-faf6-445d-9808-4aa0122c0be7" />
 
 ## Sonoff 4CH Pro Inital Setup
 
