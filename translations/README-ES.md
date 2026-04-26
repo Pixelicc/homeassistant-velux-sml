@@ -7,7 +7,7 @@
 
 ## Requisitos de Hardware
 
-- **Fuente de alimentación de 24V**
+- **Fuente de alimentación de 24V + Conector de barril**
 - **Sonoff 4CH Pro (R3)**
 
 ## Configuración Inicial
@@ -18,11 +18,11 @@
    > **Nota:** Esto solo funciona si la persiana no se ha conectado a una unidad de control Velux anteriormente. Si es así, restablézcala a los valores predeterminados utilizando la unidad de control.
 
 2. **Cableado**
-   - Conecte los cables de 24V al Sonoff 4CH Pro:
+   - Conecte la fuente de alimentación de 24V al Sonoff 4CH Pro a través de un conector de barril:
      - Primera persiana: Relé 1 y Relé 2
      - Segunda persiana (si se usa): Relé 3 y Relé 4
-   - Puentee los relés y conéctelos según el diagrama de cableado a continuación.
-   - El Sonoff 4CH Pro y las persianas reciben 24V de la fuente de alimentación.
+   - Conecte los relés según el diagrama de cableado a continuación.
+   - El Sonoff 4CH Pro y las persianas reciben 24V de la fuente de alimentación. La fuente de alimentación de 24V debe dividirse en 2-3 cables para alimentar tanto el Sonoff a través de un conector de barril como las persianas directamente.
 
    ```
    [Wiring Diagram Placeholder]

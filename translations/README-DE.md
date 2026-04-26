@@ -7,7 +7,7 @@
 
 ## Hardware-Anforderungen
 
-- **24V Netzteil**
+- **24V Netzteil + Hohlstecker**
 - **Sonoff 4CH Pro (R3)**
 
 ## Erste Einrichtung
@@ -18,11 +18,11 @@
    > **Hinweis:** Dies funktioniert nur, wenn der Rollladen noch nicht mit einer Velux-Steuereinheit verbunden war. Falls doch, setzen Sie ihn mit der Steuereinheit auf die Werkseinstellungen zurück.
 
 2. **Verkabelung**
-   - Schließen Sie die 24V-Kabel an den Sonoff 4CH Pro an:
+   - Schließen Sie das 24V-Netzteil über einen Hohlstecker an den Sonoff 4CH Pro an:
      - Erster Rollladen: Relais 1 und Relais 2
      - Zweiter Rollladen (falls verwendet): Relais 3 und Relais 4
-   - Überbrücken Sie die Relais und schließen Sie sie gemäß dem untenstehenden Schaltplan an.
-   - Der Sonoff 4CH Pro und die Rollläden werden beide über das 24V-Netzteil mit Strom versorgt.
+   - Schließen Sie die Relais gemäß dem untenstehenden Schaltplan an.
+   - Der Sonoff 4CH Pro und die Rollläden werden beide über das 24V-Netzteil mit Strom versorgt. Das 24V-Netzteil muss in 2-3 Kabel aufgeteilt werden, um sowohl den Sonoff über einen Hohlstecker als auch die Rollläden direkt mit Strom zu versorgen.
 
    ```
    [Wiring Diagram Placeholder]

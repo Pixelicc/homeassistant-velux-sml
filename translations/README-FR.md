@@ -7,7 +7,7 @@
 
 ## Matériel Requis
 
-- **Alimentation 24V**
+- **Alimentation 24V + Connecteur cylindrique**
 - **Sonoff 4CH Pro (R3)**
 
 ## Configuration Initiale
@@ -18,11 +18,11 @@
    > **Remarque :** Cela ne fonctionne que si le volet n'a jamais été connecté à une unité de contrôle Velux auparavant. Si c'est le cas, réinitialisez-le aux paramètres par défaut à l'aide de l'unité de contrôle.
 
 2. **Câblage**
-   - Connectez les fils 24V au Sonoff 4CH Pro :
+   - Connectez l'alimentation 24V au Sonoff 4CH Pro via un connecteur cylindrique :
      - Premier volet : Relais 1 et Relais 2
      - Deuxième volet (si utilisé) : Relais 3 et Relais 4
-   - Pondez les relais et connectez-les selon le schéma de câblage ci-dessous.
-   - Le Sonoff 4CH Pro et les volets reçoivent tous deux du 24V de l'alimentation.
+   - Connectez les relais selon le schéma de câblage ci-dessous.
+   - Le Sonoff 4CH Pro et les volets reçoivent tous deux du 24V de l'alimentation. L'alimentation 24V doit être divisée en 2-3 fils pour alimenter à la fois le Sonoff via un connecteur cylindrique et les volets directement.
 
    ```
    [Wiring Diagram Placeholder]

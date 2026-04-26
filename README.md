@@ -7,7 +7,7 @@
 
 ## Hardware Requirements
 
-- **24V Power Supply**
+- **24V Power Supply + Barrel Jack**
 - **Sonoff 4CH Pro (R3)**
 
 ## Initial Setup
@@ -18,11 +18,11 @@
    > **Note:** This only works if the cover has not been connected to a Velux control unit before. If it has, reset it to default using the control unit.
 
 2. **Wiring**
-   - Connect the 24V wires to the Sonoff 4CH Pro:
+   - Connect the 24V Power Supply to the Sonoff 4CH Pro via a Barrel Jack:
      - First cover: Relay 1 and Relay 2
      - Second cover (if used): Relay 3 and Relay 4
-   - Bridge the relays and connect according to the wiring diagram below.
-   - The Sonoff 4CH Pro and the covers both receive 24V from the power supply.
+   - Connect the relays according to the wiring diagram below.
+   - The Sonoff 4CH Pro and the covers both receive 24V from the power supply. The 24V Power Supply needs to be split into 2-3 wires to power both the Sonoff via a Barrel Jack and the Covers directly.
 
    ```
    [Wiring Diagram Placeholder]
