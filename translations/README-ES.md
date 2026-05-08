@@ -13,7 +13,7 @@
 ## Configuración Inicial
 
 1. **Conexión Manual y Restablecimiento**  
-   Conecte la persiana a 24V manualmente y ciérrela por completo.
+   Conecte la persiana a 24V manualmente y deje que se cierre y se abra por completo para establecer los puntos finales.
 
    > **Nota:** Esto solo funciona si la persiana no se ha conectado a una unidad de control Velux anteriormente. Si es así, restablézcala a los valores predeterminados utilizando la unidad de control.
 

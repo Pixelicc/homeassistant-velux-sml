@@ -13,7 +13,7 @@
 ## Configuration Initiale
 
 1. **Connexion Manuelle & Réinitialisation**  
-   Connectez le volet au 24V manuellement et fermez-le complètement.
+   Connectez le volet au 24V manuellement et laissez-le se fermer et s'ouvrir complètement pour définir les points d'arrêt.
 
    > **Remarque :** Cela ne fonctionne que si le volet n'a jamais été connecté à une unité de contrôle Velux auparavant. Si c'est le cas, réinitialisez-le aux paramètres par défaut à l'aide de l'unité de contrôle.
 

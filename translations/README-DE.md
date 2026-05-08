@@ -13,7 +13,7 @@
 ## Erste Einrichtung
 
 1. **Manuelle Verbindung & Zurücksetzen**  
-   Verbinden Sie den Rollladen manuell mit 24V und schließen Sie ihn vollständig.
+   Verbinden Sie den Rollladen manuell mit 24V und lassen Sie ihn sich vollständig schließen und öffnen, um die Endpunkte festzulegen.
 
    > **Hinweis:** Dies funktioniert nur, wenn der Rollladen noch nicht mit einer Velux-Steuereinheit verbunden war. Falls doch, setzen Sie ihn mit der Steuereinheit auf die Werkseinstellungen zurück.
 

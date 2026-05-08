@@ -13,7 +13,7 @@
 ## Initial Setup
 
 1. **Manual Connection & Reset**  
-   Connect the cover to 24V manually and fully close it.
+   Connect the cover to 24V manually and let it fully close and open itself to set end points.
 
    > **Note:** This only works if the cover has not been connected to a Velux control unit before. If it has, reset it to default using the control unit.
 
