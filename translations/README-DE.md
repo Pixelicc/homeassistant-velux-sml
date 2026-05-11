@@ -43,8 +43,8 @@
    </br>
    [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://raw.githubusercontent.com/pixelicc/homeassistant-velux-sml/refs/heads/main/translations/blueprint-DE.yaml)
 
-   > [!NOTE]
-   > Versuchen Sie nicht, den Rollladen zu schnell hintereinander über Home Assistant zu öffnen, zu schließen oder eine Position einzustellen, da dies dazu führen kann, dass der Rollladen seinen gelernten Endpunkt verliert und ein vollständiges Zurücksetzen erforderlich wird.
+> [!NOTE]
+> Versuchen Sie nicht, den Rollladen zu schnell hintereinander über Home Assistant zu öffnen, zu schließen oder eine Position einzustellen, da dies dazu führen kann, dass der Rollladen seinen gelernten Endpunkt verliert und ein vollständiges Zurücksetzen erforderlich wird.
 
 7. Erstellen Sie einen `template` Cover-Helfer über den Home Assistant Helfer-Tab und konfigurieren Sie ihn wie unten gezeigt.
    </br>

@@ -43,8 +43,8 @@
    </br>
    [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://raw.githubusercontent.com/pixelicc/homeassistant-velux-sml/refs/heads/main/translations/blueprint-ES.yaml)
 
-   > [!NOTE]
-   > Intente no abrir, cerrar o establecer la posición de la persiana desde Home Assistant con demasiada rapidez, ya que esto puede hacer que la persiana pierda su punto final aprendido y requiera un reinicio completo.
+> [!NOTE]
+> Intente no abrir, cerrar o establecer la posición de la persiana desde Home Assistant con demasiada rapidez, ya que esto puede hacer que la persiana pierda su punto final aprendido y requiera un reinicio completo.
 
 7. Cree un ayudante de persiana (cover) `template` a través de la pestaña de ayudantes de Home Assistant y configúrelo como se muestra a continuación.
    </br>
