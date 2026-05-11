@@ -42,6 +42,10 @@
 6. Importez `blueprint-FR.yaml` dans Home Assistant ou cliquez sur le bouton intégré ci-dessous et suivez son guide.
    </br>
    [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://raw.githubusercontent.com/pixelicc/homeassistant-velux-sml/refs/heads/main/translations/blueprint-FR.yaml)
+
+   > [!NOTE]
+   > Essayez de ne pas ouvrir, fermer ou définir la position du volet depuis Home Assistant trop rapidement, car cela peut amener le volet à perdre son point d'arrêt appris et nécessiter une réinitialisation complète.
+
 7. Créez une entrée `template` de volet (cover) via l'onglet des entrées de Home Assistant et configurez-la comme indiqué ci-dessous.
    </br>
    _Si les fils sont connectés à l'envers, inversez `open` et `closed` dans le modèle d'état ci-dessous. Ne le faites que si vous avez également basculé l'option `reverse` dans le blueprint._
