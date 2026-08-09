@@ -107,8 +107,6 @@ sequence:
                 - action: input_number.increment
                   target:
                     entity_id: !input position
-                  data:
-                    amount: 1
                 - delay:
                     hours: 0
                     minutes: 0
@@ -149,8 +147,6 @@ sequence:
                 - action: input_number.decrement
                   target:
                     entity_id: !input position
-                  data:
-                    amount: 1
                 - delay:
                     hours: 0
                     minutes: 0
@@ -196,8 +192,6 @@ sequence:
                     - action: input_number.increment
                       target:
                         entity_id: !input position
-                      data:
-                        amount: 1
                     - delay:
                         hours: 0
                         minutes: 0
@@ -229,8 +223,6 @@ sequence:
                     - action: input_number.decrement
                       target:
                         entity_id: !input position
-                      data:
-                        amount: 1
                     - delay:
                         hours: 0
                         minutes: 0
